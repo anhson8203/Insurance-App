@@ -105,18 +105,16 @@ public class Claim {
     @Override
     public String toString() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        String s = "* Claim information:";
-        s += "\n- ID: " + id + " | Claim date: " + dateFormat.format(claimDate) + " | Insured PersonID: "
-                + insuredPersonID + " | CardNumberID=" + cardNumberID;
-        s += "\n- Exam Date: " + dateFormat.format(examDate) + " | Claim Amount: $" + claimAmount + " | Status: "
-                + status;
-        s += "\n- List of documents: ";
+        StringBuilder s = new StringBuilder("* Claim information:");
+        s.append("\n- ID: ").append(id).append(" | Claim date: ").append(dateFormat.format(claimDate)).append(" | Insured PersonID: ").append(insuredPersonID).append(" | CardNumberID=").append(cardNumberID);
+        s.append("\n- Exam Date: ").append(dateFormat.format(examDate)).append(" | Claim Amount: $").append(claimAmount).append(" | Status: ").append(status);
+        s.append("\n- List of documents: ");
         for (String string : listOfDocuments) {
-            s += "\n  + " + string;
+            s.append("\n  + ").append(string);
         }
-        s += "\n- Receiver Banking Info: " + receiverBankingInfo;
+        s.append("\n- Receiver Banking Info: ").append(receiverBankingInfo);
 
-        return s;
+        return s.toString();
     }
 
     public String getDataSaveFile() {

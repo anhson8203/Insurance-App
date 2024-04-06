@@ -6,15 +6,15 @@ import java.util.Date;
 public class InsuranceCard {
     private String id;
     private String cardHolderID;
-    private String policyAwner;
+    private String policyOwner;
     private Date anExpirationDate;
 
     public InsuranceCard() {}
 
-    public InsuranceCard(String id, String cardHolderID, String policyAwner, Date anExpirationDate) {
+    public InsuranceCard(String id, String cardHolderID, String policyOwner, Date anExpirationDate) {
         this.id = id;
         this.cardHolderID = cardHolderID;
-        this.policyAwner = policyAwner;
+        this.policyOwner = policyOwner;
         this.anExpirationDate = anExpirationDate;
     }
 
@@ -34,12 +34,12 @@ public class InsuranceCard {
         this.cardHolderID = cardHolderID;
     }
 
-    public String getPolicyAwner() {
-        return policyAwner;
+    public String getPolicyOwner() {
+        return policyOwner;
     }
 
-    public void setPolicyAwner(String policyAwner) {
-        this.policyAwner = policyAwner;
+    public void setPolicyOwner(String policyOwner) {
+        this.policyOwner = policyOwner;
     }
 
     public Date getAnExpirationDate() {
@@ -55,7 +55,7 @@ public class InsuranceCard {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String s = "- ID: " + id + " | Card Holder ID: " + cardHolderID + "| An Expiration Date:"
                 + dateFormat.format(anExpirationDate);
-        s += "\n  + Policy Awner: " + policyAwner;
+        s += "\n  + Policy Owner: " + policyOwner;
         return s;
     }
 }
