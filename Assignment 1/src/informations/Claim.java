@@ -13,12 +13,14 @@ public class Claim {
     private ArrayList<String> listOfDocuments;
     private float claimAmount;
     private String status;
-    private String receiverBankingInfo;
+    private String receiverBankingName;
+    private String receiverBankingAccount;
+    private String receiverBankingNumber;
 
     public Claim() {}
 
     public Claim(String id, Date claimDate, String insuredPersonID, String cardNumberID, Date examDate,
-                 ArrayList<String> listOfDocuments, float claimAmount, String status, String receiverBankingInfo) {
+                 ArrayList<String> listOfDocuments, float claimAmount, String status, String receiverBankingName, String receiverBankingAccount, String receiverBankingNumber) {
         this.id = id;
         this.claimDate = claimDate;
         this.insuredPersonID = insuredPersonID;
@@ -27,7 +29,9 @@ public class Claim {
         this.listOfDocuments = listOfDocuments;
         this.claimAmount = claimAmount;
         this.status = status;
-        this.receiverBankingInfo = receiverBankingInfo;
+        this.receiverBankingName = receiverBankingName;
+        this.receiverBankingAccount = receiverBankingAccount;
+        this.receiverBankingNumber = receiverBankingNumber;
     }
 
     public String getId() {
@@ -94,12 +98,28 @@ public class Claim {
         this.status = status;
     }
 
-    public String getReceiverBankingInfo() {
-        return receiverBankingInfo;
+    public String getReceiverBankingName() {
+        return receiverBankingName;
     }
 
-    public void setReceiverBankingInfo(String receiverBankingInfo) {
-        this.receiverBankingInfo = receiverBankingInfo;
+    public void setReceiverBankingName(String receiverBankingName) {
+        this.receiverBankingName = receiverBankingName;
+    }
+
+    public String getReceiverBankingAccount() {
+        return receiverBankingAccount;
+    }
+
+    public void setReceiverBankingAccount(String receiverBankingAccount) {
+        this.receiverBankingAccount = receiverBankingAccount;
+    }
+
+    public String getReceiverBankingNumber() {
+        return receiverBankingNumber;
+    }
+
+    public void setReceiverBankingNumber(String receiverBankingNumber) {
+        this.receiverBankingNumber = receiverBankingNumber;
     }
 
     @Override
@@ -112,7 +132,9 @@ public class Claim {
         for (String string : listOfDocuments) {
             s.append("\n  + ").append(string);
         }
-        s.append("\n- Receiver Banking Info: ").append(receiverBankingInfo);
+        s.append("\n- Receiver Bank's Name: ").append(receiverBankingName);
+        s.append("\n- Receiver Bank Account's Name: ").append(receiverBankingAccount);
+        s.append("\n- Receiver Bank Account's Number: ").append(receiverBankingNumber);
 
         return s.toString();
     }
@@ -123,7 +145,9 @@ public class Claim {
         s += id + "|" + dateFormat.format(claimDate) + "|" + insuredPersonID + "|"
                 + cardNumberID + "|" + dateFormat.format(examDate) + "|" + claimAmount + "|" + status;
         s += "\n" + String.join("|", listOfDocuments);
-        s += "\n" + receiverBankingInfo;
+        s += "\n" + receiverBankingName;
+        s += "\n" + receiverBankingAccount;
+        s += "\n" + receiverBankingNumber;
 
         return s;
     }

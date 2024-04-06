@@ -77,10 +77,12 @@ public class ClaimProcessManagerImpl implements ClaimProcessManager {
                         l.add(s);
                     }
 
-                    String receiverBankingInfo = br.readLine();
+                    String receiverBankingName = br.readLine();
+                    String receiverBankingAccount = br.readLine();
+                    String receiverBankingNumber = br.readLine();
 
                     Claim claim = new Claim(parts[0], date1, parts[2], parts[3], date2, l, Float.parseFloat(parts[5]),
-                            parts[6], receiverBankingInfo);
+                            parts[6], receiverBankingName, receiverBankingAccount, receiverBankingNumber);
 
                     claimList.add(claim);
                 } catch (Exception ex) {
