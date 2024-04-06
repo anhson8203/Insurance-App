@@ -1,11 +1,17 @@
 package UI;
 
-import java.util.List;
+import java.util.ArrayList;
+
+import informations.Claim;
 
 public interface ClaimProcessManager {
-    void add(Claim claim);
-    void update(long id, Claim claim);
-    void delete(long id);
-    Claim getOne(long id);
-    List<Claim> getAll();
+    void addClaim(Claim claim);
+
+    void updateClaim(Claim claim);
+
+    void deleteClaim(String claimId);
+
+    Claim getClaim(String claimId);
+
+    ArrayList<Claim> getAllClaims();
 }
