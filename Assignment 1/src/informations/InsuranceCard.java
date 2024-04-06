@@ -1,3 +1,5 @@
+package informations;
+
 public class InsuranceCard {
     private long cardNumber;
     private String cardHolder;

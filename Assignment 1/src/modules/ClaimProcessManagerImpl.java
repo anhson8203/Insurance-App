@@ -1,3 +1,7 @@
+package modules;
+
+import UI.ClaimProcessManager;
+
 import java.util.ArrayList;
 import java.util.List;
 
