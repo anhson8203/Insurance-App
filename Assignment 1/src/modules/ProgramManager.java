@@ -182,11 +182,10 @@ public class ProgramManager {
             }
         }
 
-        System.out.print("List of documents (separated by commas): ");
+        System.out.print("List of documents (separated by commas and without file format): ");
         String documentsStr = scanner.nextLine();
 
         String[] documentsArray = documentsStr.split(",");
-
         ArrayList<String> listOfDocuments = new ArrayList<>(Arrays.asList(documentsArray));
 
         float claimAmount;

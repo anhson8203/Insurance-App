@@ -130,7 +130,7 @@ public class Claim {
         s.append("\n- Exam Date: ").append(dateFormat.format(examDate)).append(" | Claim Amount: $").append(claimAmount).append(" | Status: ").append(status);
         s.append("\n- List of documents: ");
         for (String string : listOfDocuments) {
-            s.append("\n  + ").append(string);
+            s.append("\n  + ").append(string).append(".pdf");
         }
         s.append("\n- Receiver Bank's Name: ").append(receiverBankingName);
         s.append("\n- Receiver Bank Account's Name: ").append(receiverBankingAccount);
