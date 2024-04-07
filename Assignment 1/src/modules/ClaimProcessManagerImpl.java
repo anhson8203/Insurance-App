@@ -6,6 +6,7 @@ import informations.Claim;
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 
 public class ClaimProcessManagerImpl implements ClaimProcessManager {
@@ -73,9 +74,7 @@ public class ClaimProcessManagerImpl implements ClaimProcessManager {
                     line = br.readLine();
                     String[] s2 = line.split("\\|");
 
-                    for (String s : s2) {
-                        l.add(s);
-                    }
+                    Collections.addAll(l, s2);
 
                     String receiverBankingName = br.readLine();
                     String receiverBankingAccount = br.readLine();

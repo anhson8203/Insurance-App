@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Scanner;
+import java.util.Random;
 
 import UI.ClaimProcessManager;
 import informations.Claim;
@@ -62,6 +63,17 @@ public class ProgramManager {
         return lInsuranceCards;
     }
 
+    private String generateRandomID() {
+        Random random = new Random();
+        StringBuilder idBuilder = new StringBuilder();
+
+        for (int i = 0; i < 10; i++) {
+            idBuilder.append(random.nextInt(10));
+        }
+
+        return idBuilder.toString();
+    }
+
     public boolean checkIDClaim(String id) {
         if (id.length() != 10)
             return false;
@@ -79,7 +91,7 @@ public class ProgramManager {
     }
 
     public void displayListInsuranceCards() {
-        System.out.println("\nList of InsuranceCards information:");
+        System.out.println("\nList of Insurance Cards information:");
         for (InsuranceCard insuranceCard : listInsuranceCards) {
             System.out.println(insuranceCard.toString());
         }
@@ -101,18 +113,11 @@ public class ProgramManager {
         System.out.println("\nEnter new claim information");
         String id;
         while (true) {
-            System.out.print("ID: ");
-            id = scanner.nextLine();
-            if (checkIDClaim(id)) {
-                System.out.println("The id format must be 10 digits, please re-enter !");
-                continue;
-            }
+            id = generateRandomID();
 
             if (claimManager.getClaim(id) != null) {
-                System.out.println("Claim ID already exists, please re-enter!");
                 continue;
             }
-
             break;
         }
 
@@ -227,9 +232,6 @@ public class ProgramManager {
     }
 
     public Claim inputInfoUpdate(String id) {
-        displayListCustomers();
-        displayListInsuranceCards();
-
         Date claimDate = null;
         while (true) {
             System.out.print("Request date (yyyy-MM-dd): ");
@@ -331,51 +333,55 @@ public class ProgramManager {
                 status, receiverBankingName, receiverBankingAccount, receiverBankingNumber);
     }
 
+    public void displayAllClaims() {
+        ArrayList<Claim> claims = claimManager.getAllClaims();
+        if (!claims.isEmpty()) {
+            System.out.println("\nList of all claims: ");
+            for (Claim claim : claims) {
+                System.out.println(claim);
+            }
+        } else {
+            System.out.println("\nClaim list is empty.");
+        }
+    }
+
     public void updateClaim() {
         ArrayList<Claim> claims = claimManager.getAllClaims();
         if (!claims.isEmpty()) {
-            System.out.print("Enter the ID of the claim to update: ");
+            displayAllClaims();
+            System.out.print("\nEnter the ID of the claim to update: ");
             String id = scanner.nextLine();
             Claim existingClaim = claimManager.getClaim(id);
             if (existingClaim != null) {
                 System.out.print("Enter update information: ");
                 existingClaim = inputInfoUpdate(id);
                 claimManager.updateClaim(existingClaim);
-                System.out.println("The claim has been updated successfully.");
+                System.out.println("\nThe claim has been updated successfully.");
             } else {
-                System.out.println("No claims were found with the entered ID.");
+                System.out.println("\nNo claims were found with the entered ID.");
             }
         } else {
-            System.out.println("Claim list is empty.");
+            System.out.println("\nClaim list is empty.");
         }
     }
 
     public void deleteClaim() {
         ArrayList<Claim> claims = claimManager.getAllClaims();
         if (!claims.isEmpty()) {
-            System.out.print("Enter the ID of the claim to delete: ");
+            displayAllClaims();
+            displayListCustomers();
+            displayListInsuranceCards();
+            System.out.print("\nEnter the ID of the claim to delete: ");
             String id = scanner.nextLine();
             Claim existingClaim = claimManager.getClaim(id);
             if (existingClaim != null) {
                 claimManager.deleteClaim(id);
-                System.out.println("The claim has been successfully cleared.");
+                System.out.println("\nThe claim has been successfully cleared.");
             } else {
-                System.out.println("No claims were found with the entered ID.");
+                System.out.println("\nNo claims were found with the entered ID.");
             }
         } else {
-            System.out.println("Claim list is empty.");
-        }
-    }
-
-    public void displayAllClaims() {
-        ArrayList<Claim> claims = claimManager.getAllClaims();
-        if (!claims.isEmpty()) {
-            System.out.println("List of all claims: ");
-            for (Claim claim : claims) {
-                System.out.println(claim);
-            }
-        } else {
-            System.out.println("Claim list is empty.");
+            System.out.println("\nClaim list is empty.");
         }
     }
 }
