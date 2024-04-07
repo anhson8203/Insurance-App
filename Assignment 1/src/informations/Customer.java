@@ -1,5 +1,8 @@
 package informations;
 
+/*
+ * @author Tran Anh Son - s3926557
+ * */
 public class Customer {
     private String id;
     private String fullName;

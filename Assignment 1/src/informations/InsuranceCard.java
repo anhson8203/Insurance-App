@@ -3,6 +3,9 @@ package informations;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/*
+ * @author Tran Anh Son - s3926557
+ * */
 public class InsuranceCard {
     private String id;
     private String cardHolderID;

@@ -15,6 +15,9 @@ import informations.Claim;
 import informations.Customer;
 import informations.InsuranceCard;
 
+/*
+ * @author Tran Anh Son - s3926557
+ * */
 public class ProgramManager {
     private ClaimProcessManager claimManager = new ClaimProcessManagerImpl();
     private ArrayList<Customer> listCustomers = readCustomers();

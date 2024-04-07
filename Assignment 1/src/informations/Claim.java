@@ -4,6 +4,9 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+/*
+ * @author Tran Anh Son - s3926557
+ * */
 public class Claim {
     private String id;
     private Date claimDate;

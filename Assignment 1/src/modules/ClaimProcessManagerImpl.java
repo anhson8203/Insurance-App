@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 
+/*
+ * @author Tran Anh Son - s3926557
+ * */
 public class ClaimProcessManagerImpl implements ClaimProcessManager {
     private ArrayList<Claim> claimList;
     private static final String FILE_PATH = "src\\Claims.txt";
