@@ -86,14 +86,14 @@ public class ProgramManager {
         return true;
     }
 
-    public void displayListCustomers() {
+    public void displayAllCustomers() {
         System.out.println("\nList of customers information:");
         for (Customer customer : listCustomers) {
             System.out.println(customer.toString());
         }
     }
 
-    public void displayListInsuranceCards() {
+    public void displayAllInsuranceCards() {
         System.out.println("\nList of Insurance Cards information:");
         for (InsuranceCard insuranceCard : listInsuranceCards) {
             System.out.println(insuranceCard.toString());
@@ -110,8 +110,8 @@ public class ProgramManager {
             System.out.println("There is no insurance card in the list yet!");
             return;
         }
-        displayListCustomers();
-        displayListInsuranceCards();
+        displayAllCustomers();
+        displayAllInsuranceCards();
 
         System.out.println("\nEnter new claim information");
         String id;
@@ -371,8 +371,8 @@ public class ProgramManager {
         ArrayList<Claim> claims = claimManager.getAllClaims();
         if (!claims.isEmpty()) {
             displayAllClaims();
-            displayListCustomers();
-            displayListInsuranceCards();
+            displayAllCustomers();
+            displayAllInsuranceCards();
             System.out.print("\nEnter the ID of the claim to delete: ");
             String id = scanner.nextLine();
             Claim existingClaim = claimManager.getClaim(id);

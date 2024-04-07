@@ -35,10 +35,10 @@ public class Main {
                     pm.displayAllClaims();
                     break;
                 case 5:
-                    pm.displayListCustomers();
+                    pm.displayAllCustomers();
                     break;
                 case 6:
-                    pm.displayListInsuranceCards();
+                    pm.displayAllInsuranceCards();
                     break;
                 case 0:
                     System.out.println("\nThank you for using our application.");
