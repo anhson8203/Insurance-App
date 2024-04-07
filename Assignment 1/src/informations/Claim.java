@@ -125,8 +125,8 @@ public class Claim {
     @Override
     public String toString() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        StringBuilder s = new StringBuilder("* Claim information:");
-        s.append("\n- ID: ").append(id).append(" | Claim date: ").append(dateFormat.format(claimDate)).append(" | Insured PersonID: ").append(insuredPersonID).append(" | CardNumberID=").append(cardNumberID);
+        StringBuilder s = new StringBuilder("\n* Claim information:");
+        s.append("\n- ID: ").append(id).append(" | Claim date: ").append(dateFormat.format(claimDate)).append(" | Insured Person ID: ").append(insuredPersonID).append(" | Insurance Card ID: ").append(cardNumberID);
         s.append("\n- Exam Date: ").append(dateFormat.format(examDate)).append(" | Claim Amount: $").append(claimAmount).append(" | Status: ").append(status);
         s.append("\n- List of documents: ");
         for (String string : listOfDocuments) {

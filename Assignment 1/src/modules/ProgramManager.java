@@ -104,7 +104,7 @@ public class ProgramManager {
         }
 
         if (listInsuranceCards.isEmpty()) {
-            System.out.println("There is no insurance card in the list yet !");
+            System.out.println("There is no insurance card in the list yet!");
             return;
         }
         displayListCustomers();
@@ -114,7 +114,6 @@ public class ProgramManager {
         String id;
         while (true) {
             id = generateRandomID();
-
             if (claimManager.getClaim(id) != null) {
                 continue;
             }
@@ -153,7 +152,7 @@ public class ProgramManager {
 
         String cardNumberID;
         while (true) {
-            System.out.print("ID Insurance Card: ");
+            System.out.print("Insurance Card ID: ");
             cardNumberID = scanner.nextLine();
 
             boolean k = false;
@@ -187,11 +186,12 @@ public class ProgramManager {
         String documentsStr = scanner.nextLine();
 
         String[] documentsArray = documentsStr.split(",");
+
         ArrayList<String> listOfDocuments = new ArrayList<>(Arrays.asList(documentsArray));
 
         float claimAmount;
         while (true) {
-            System.out.print("Claim mount: ");
+            System.out.print("Claim mount: $");
             claimAmount = scanner.nextFloat();
 
             if (claimAmount > 0)
@@ -264,7 +264,7 @@ public class ProgramManager {
 
         String cardNumberID;
         while (true) {
-            System.out.print("ID InsuranceCard: ");
+            System.out.print("Insurance Card ID: ");
             cardNumberID = scanner.nextLine();
 
             boolean k = false;
@@ -279,7 +279,7 @@ public class ProgramManager {
             if (k)
                 break;
 
-            System.out.println("InsuranceCard ID does not exist with Customer ID, please re-enter!");
+            System.out.println("Insurance Card ID does not exist with provided Customer ID, please re-enter!");
         }
 
         Date examDate;
@@ -290,7 +290,7 @@ public class ProgramManager {
                 examDate = dateFormat.parse(examDateStr);
                 break;
             } catch (ParseException e) {
-                System.out.println("Error: Invalid date format, please re-enter !");
+                System.out.println("Error: Invalid date format, please re-enter!");
             }
         }
 
@@ -299,13 +299,13 @@ public class ProgramManager {
 
         float claimAmount;
         while (true) {
-            System.out.print("Claim mount: ");
+            System.out.print("Claim mount: $");
             claimAmount = scanner.nextFloat();
 
             if (claimAmount > 0)
                 break;
 
-            System.out.println("Error: Amount must be greater than 0, please re-enter !");
+            System.out.println("Error: Claim amount cannot be 0, please re-enter!");
         }
 
         scanner.nextLine();
@@ -353,7 +353,7 @@ public class ProgramManager {
             String id = scanner.nextLine();
             Claim existingClaim = claimManager.getClaim(id);
             if (existingClaim != null) {
-                System.out.print("Enter update information: ");
+                System.out.println("Enter update information");
                 existingClaim = inputInfoUpdate(id);
                 claimManager.updateClaim(existingClaim);
                 System.out.println("\nThe claim has been updated successfully.");
