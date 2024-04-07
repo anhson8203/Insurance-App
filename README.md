@@ -28,10 +28,8 @@ The Insurance Claims Management System is a Java-based console application desig
 2. Follow the on-screen instructions to interact with the application.
 
 ## Sample Data
-Sample data for customers, insurance cards, and claims is provided in text files within the `data` directory. Ensure that these files exist and are populated with sample data before running the application.
+Sample data for customers, insurance cards, and claims is provided in text files within the `src/` directory. Ensure that these files exist and are populated with sample data before running the application.
 
 ## File Structure
-- `src/`: Contains the source code files.
-- `data/`: Contains sample data files for customers, insurance cards, and claims.
+- `src/`: Contains the source code files and data.
 - `README.md`: This file containing information about the project.
-- `LICENSE`: License information for the project.
