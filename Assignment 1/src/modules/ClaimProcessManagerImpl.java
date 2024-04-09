@@ -14,7 +14,7 @@ import java.util.Date;
  * */
 public class ClaimProcessManagerImpl implements ClaimProcessManager {
     private ArrayList<Claim> claimList;
-    private static final String FILE_PATH = "src\\Claims.txt";
+    private static final String FILE_PATH = "D:\\RMIT University\\Further Programming\\Insurance-App\\Assignment 1\\src\\Claims.txt";
 
     public ClaimProcessManagerImpl() {
         this.claimList = new ArrayList<>();

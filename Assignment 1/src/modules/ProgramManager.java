@@ -34,7 +34,7 @@ public class ProgramManager {
 
     public ArrayList<Customer> readCustomers() {
         ArrayList<Customer> lCustomers = new ArrayList<Customer>();
-        try (BufferedReader br = new BufferedReader(new FileReader("src\\Customers.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("D:\\RMIT University\\Further Programming\\Insurance-App\\Assignment 1\\src\\Customers.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] parts = line.split("\\|");
@@ -48,7 +48,7 @@ public class ProgramManager {
 
     public ArrayList<InsuranceCard> readInsuranceCards() {
         ArrayList<InsuranceCard> lInsuranceCards = new ArrayList<InsuranceCard>();
-        try (BufferedReader br = new BufferedReader(new FileReader("src\\InsuranceCards.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("D:\\RMIT University\\Further Programming\\Insurance-App\\Assignment 1\\src\\InsuranceCards.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] parts = line.split("\\|");
